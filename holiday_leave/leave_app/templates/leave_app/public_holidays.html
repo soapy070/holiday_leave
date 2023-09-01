@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Holiday List</title>
+    <style>
+        /* Apply grid layout to tables */
+        table {
+            display: grid;
+            grid-template-columns: auto auto;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+
+        /* Style table header cells */
+        th {
+            background-color: #f2f2f2;
+            padding: 8px;
+            text-align: center;
+            font-weight: bold;
+        }
+
+        /* Style table data cells */
+        td {
+            padding: 8px;
+            border: 1px solid #ddd;
+        }
+
+        /* Add some spacing around headings */
+        h2 {
+            margin-top: 20px;
+        }
+
+        /* Style table container to align tables */
+        #england-table,
+        #scotland-table,
+        #wales-table,
+        #northern-ireland-table,
+        #australia-table,
+        #canada-table,
+        #usa-table {
+            display: contents;
+            margin-bottom: 0; /* Remove margin for individual tables */
+        }
+
+        /* containers to wrap tables */
+        .uk-container,
+        .other-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr; /* Equal width columns for UK tables */
+            gap: 20px; /* Gap between the tables */
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Holiday List</h1>
+
+    <h2>UK Holidays</h2>
+  <div class="uk-container">
+        <table id="england-table">
+            <tr class="country-name-row">
+                <th colspan="2">England Holidays</th>
+            </tr>
+            <tr>
+                <th>Date</th>
+                <th>Name</th>
+            </tr>
+        {% for date, name in eng_holidays %}
+            <tr>
+                <td>{{ date }}</td>
+                <td>{{ name }}</td>
+            </tr>
+        {% endfor %}
+        </table>
+        <table id="scotland-table">
+            <tr class="country-name-row">
+                <th colspan="2">Scotland Holidays</th>
+            </tr>
+             <tr>
+            <th>Date</th>
+            <th>Name</th>
+        </tr>
+        {% for date, name in sct_holidays %}
+            <tr>
+                <td>{{ date }}</td>
+                <td>{{ name }}</td>
+            </tr>
+        {% endfor %}
+        </table>
+        <table id="wales-table">
+            <tr class="country-name-row">
+                <th colspan="2">Wales Holidays</th>
+            </tr>
+             <tr>
+            <th>Date</th>
+            <th>Name</th>
+        </tr>
+        {% for date, name in wls_holidays %}
+            <tr>
+                <td>{{ date }}</td>
+                <td>{{ name }}</td>
+            </tr>
+        {% endfor %}
+        </table>
+        <table id="northern-ireland-table">
+            <tr class="country-name-row">
+                <th colspan="2">Northern Ireland Holidays</th>
+            </tr>
+             <tr>
+            <th>Date</th>
+            <th>Name</th>
+        </tr>
+        {% for date, name in nir_holidays %}
+            <tr>
+                <td>{{ date }}</td>
+                <td>{{ name }}</td>
+            </tr>
+        {% endfor %}
+        </table>
+    </div>
+
+    <h2>Other Holidays</h2>
+    <div class="other-container">
+        <table id="australia-table">
+            <tr class="country-name-row">
+                <th colspan="2">Australia Holidays</th>
+            </tr>
+             <tr>
+            <th>Date</th>
+            <th>Name</th>
+        </tr>
+        {% for date, name in au_holidays %}
+            <tr>
+                <td>{{ date }}</td>
+                <td>{{ name }}</td>
+            </tr>
+        {% endfor %}
+        </table>
+        <table id="canada-table">
+            <tr class="country-name-row">
+                <th colspan="2">Canada Holidays</th>
+            </tr>
+             <tr>
+            <th>Date</th>
+            <th>Name</th>
+        </tr>
+        {% for date, name in ca_holidays %}
+            <tr>
+                <td>{{ date }}</td>
+                <td>{{ name }}</td>
+            </tr>
+        {% endfor %}
+        </table>
+        <table id="usa-table">
+            <tr class="country-name-row">
+                <th colspan="2">USA Holidays</th>
+            </tr>
+             <tr>
+            <th>Date</th>
+            <th>Name</th>
+        </tr>
+        {% for date, name in us_holidays %}
+            <tr>
+                <td>{{ date }}</td>
+                <td>{{ name }}</td>
+            </tr>
+        {% endfor %}
+        </table>
+    </div>
+</body>
+</html>

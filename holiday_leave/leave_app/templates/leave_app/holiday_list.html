@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Holiday List</title>
+</head>
+<body>
+    <h1>Holiday List</h1>
+    <ul>
+        {% for holiday in holidays %}
+            <li>{{ holiday.name }} - {{ holiday.date }}</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
